@@ -1240,6 +1240,14 @@ write_tsdb_la_SOURCES = write_tsdb.c
 write_tsdb_la_LDFLAGS = $(PLUGIN_LDFLAGS)
 endif
 
+if BUILD_PLUGIN_XFRM
+pkglib_LTLIBRARIES += xfrm.la
+xfrm_la_SOURCES = xfrm.c
+xfrm_la_CFLAGS = $(AM_CFLAGS) $(BUILD_WITH_LIBMNL_CFLAGS)
+xfrm_la_LDFLAGS = $(PLUGIN_LDFLAGS)
+xfrm_la_LIBADD = $(BUILD_WITH_LIBMNL_LIBS)
+endif
+
 if BUILD_PLUGIN_XMMS
 pkglib_LTLIBRARIES += xmms.la
 xmms_la_SOURCES = xmms.c
