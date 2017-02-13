@@ -1793,6 +1793,14 @@ xencpu_la_LDFLAGS = $(PLUGIN_LDFLAGS) $(LIBXENCTL_LDFLAGS)
 xencpu_la_LIBADD = -lxenctrl
 endif
 
+if BUILD_PLUGIN_XFRM
+pkglib_LTLIBRARIES += xfrm.la
+xfrm_la_SOURCES = src/xfrm.c
+xfrm_la_CFLAGS = $(AM_CFLAGS) $(BUILD_WITH_LIBMNL_CFLAGS)
+xfrm_la_LDFLAGS = $(PLUGIN_LDFLAGS)
+xfrm_la_LIBADD = $(BUILD_WITH_LIBMNL_LIBS)
+endif
+
 if BUILD_PLUGIN_XMMS
 pkglib_LTLIBRARIES += xmms.la
 xmms_la_SOURCES = src/xmms.c

@@ -6400,6 +6400,7 @@ AC_PLUGIN([write_sensu],         [yes],                     [Sensu output plugin
 AC_PLUGIN([write_tsdb],          [yes],                     [TSDB output plugin])
 AC_PLUGIN([xencpu],              [$plugin_xencpu],          [Xen Host CPU usage])
 AC_PLUGIN([xmms],                [$with_libxmms],           [XMMS statistics])
+AC_PLUGIN([xfrm],                [$with_libmnl],            [Linux XFRM statistics])
 AC_PLUGIN([zfs_arc],             [$plugin_zfs_arc],         [ZFS ARC statistics])
 AC_PLUGIN([zone],                [$plugin_zone],            [Solaris container statistics])
 AC_PLUGIN([zookeeper],           [yes],                     [Zookeeper statistics])
